@@ -3,6 +3,7 @@ $cBlack: #000000;
 $cWhite: #ffffff;
 $cGray: #808080;
 $cLime: #00FF00;
+$cLightblue: #00FFFF;
 
 body {
   margin: 0;
@@ -93,6 +94,11 @@ body {
     font-size: 1.5vw;
     margin: 0 2vw;
     color: $cBlack;
+  
+  &:hover {
+    color: $cLightblue;
+    font-weight: 700;
+  }
   }
 
 }
@@ -131,6 +137,11 @@ body {
     border: solid 2px $cRed;
     width: 60%;
     border-radius: 10px;
+    &:hover {
+      border: solid 3px #00FF00;
+      box-shadow: 5px 5px rgba(0,0,0,0.1);
+      background-color: rgba(0,0,0,0.4);
+    }
   }
   &__WorkText {
     margin: 1vw 6vw;
@@ -191,7 +202,6 @@ body {
   }
   
   &__table {
-    display: table-cell;
     text-align: center;
   }
   &__imageList {
@@ -294,9 +304,22 @@ body {
   width: 15vw;
   height: 15vw;
   border-radius: 100px;
-  background-color: cyan;
+  background: radial-gradient(#d0ede8, $cLightblue);
   cursor: pointer;
   margin-bottom: 30px;
+  &:hover {
+    background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+    opacity: 1;
+    animation: flash 1.5s;
+}
+@keyframes flash {
+0% {
+opacity: 0.2;
+}
+100% {
+opacity: 1;
+}
+  }
 }
 #reset {
   @extend #sent;
@@ -332,7 +355,7 @@ body {
 }
 }
 
-// tablet 表示
+// tblet 表示
 @media(max-width: 768px) {
 
   .p-main {
@@ -353,7 +376,7 @@ body {
 
 #container {
   position: relative;
-  height: 60vh;
+  height: 70vh;
   z-index: 1;
   transition: all 0.5s;
 }
